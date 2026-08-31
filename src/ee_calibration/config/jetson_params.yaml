@@ -1,0 +1,13 @@
+image_capture_node:
+  ros__parameters:
+    color_topic: /camera/camera/color/image_raw
+    camera_info_topic: /camera/camera/color/camera_info
+    depth_topic: /camera/camera/aligned_depth_to_color/image_raw
+    capture_depth: true
+    image_sync_tolerance_sec: 0.2
+    # Moved from ~/react_ws/calib_data on 2026-08-27 per user request --
+    # react_ws is the separate hand_detector git repo and must stay
+    # untouched by this project's output data.
+    output_root: ~/calib_ws/calib_data
+    manifest_filename: manifest.json
+    buffer_size: 60

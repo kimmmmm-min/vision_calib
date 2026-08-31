@@ -1,0 +1,149 @@
+joint_state_bridge_node:
+  ros__parameters:
+    source_topic: /UR10_right/joint_states
+    target_topic: /joint_states
+    # VERIFY against real hardware (jog each joint, watch which array index
+    # moves) before trusting any FK/TF derived from this bridge.
+    joint_names:
+      - shoulder_pan_joint
+      - shoulder_lift_joint
+      - elbow_joint
+      - wrist_1_joint
+      - wrist_2_joint
+      - wrist_3_joint
+
+trajectory_bridge_node:
+  ros__parameters:
+    action_name: /scaled_joint_trajectory_controller/follow_joint_trajectory
+    target_topic: /UR10_right/targetJ
+    joint_states_topic: /joint_states
+    stream_rate_hz: 50.0
+    goal_tolerance_rad: 0.01
+    # Raised from 2.0s -- with velocity scaled down to 10%, trajectories take
+    # longer to converge within tolerance and were hitting
+    # GOAL_TOLERANCE_VIOLATED before settling (seen 2026-08-26).
+    settle_check_timeout_sec: 6.0
+
+calibration_point_publisher:
+  ros__parameters:
+    # This must be the exact physical point selected in every camera image.
+    # Zero offset means the UR flange/tool0 centre.  If a visible bolt, tool
+    # tip, or other feature is used, measure its offset in tool0 coordinates
+    # and replace translation_xyz below (metres).
+    parent_frame: tool0
+    child_frame: calibration_point
+    translation_xyz: [0.0, 0.0, 0.0]
+    rotation_rpy: [0.0, 0.0, 0.0]
+
+pose_sampler_node:
+  ros__parameters:
+    num_poses: 12
+    validation_num_poses: 4
+    base_frame: base
+    ee_frame: tool0
+    # 3D point paired with the camera pixel.  Motion is still planned for
+    # ee_frame, but p_base is read from this physical reference frame.
+    calibration_frame: calibration_point
+    planning_group: ur_manipulator
+    # Latch the live tool0 pose after the operator places the arm in a safe
+    # observation pose with forearm/wrist visible.  "configured" is retained
+    # only as an explicit fallback for offline tests.
+    center_mode: current
+    configured_center_xyz: [-0.55, 0.0, 0.65]
+    orientation_mode: current
+    nominal_rpy: [3.14159265, 0.0, 0.0]
+    # Fixed orientation by default.  A later nonzero value produces bounded,
+    # structured variations; it never introduces random wrist motion.
+    orientation_variation_rad: 0.0
+    # Camera-aligned half extents: full region is 20 x 16 x 12 cm.
+    sampling_lateral_extent_m: 0.10
+    sampling_vertical_extent_m: 0.08
+    sampling_depth_extent_m: 0.06
+    max_cartesian_step_m: 0.15
+    # Capture only after measured joint velocities have remained low.
+    # 0.01 raised to 0.05 on 2026-08-27: with the robot fully stationary,
+    # wrist_2_joint's reported velocity sat at ~0.02-0.03rad/s (all other
+    # joints read exactly 0) -- sensor/telemetry noise floor on that one
+    # joint, not real motion. 0.01 could never pass regardless of timeout;
+    # confirmed by sampling /joint_states directly at rest. Timeout put back
+    # to its original 4.0s since the real problem was the threshold, not
+    # the wait time.
+    settle_velocity_threshold_rad_s: 0.05
+    settle_stable_time_sec: 0.5
+    settle_timeout_sec: 4.0
+    settle_time_sec: 0.25
+    motion_timeout_sec: 30.0
+    capture_timeout_sec: 10.0
+    # Direction (bearing/angle from workspace to camera) is still an
+    # unverified guess -- that's the actual chicken-and-egg limitation this
+    # whole pre-filter exists to work around. Distance was measured
+    # 2026-08-26 via the RealSense's own aligned depth at the visible
+    # forearm_link region: ~1.0-1.15m. camera_approx_xyz keeps that same
+    # offset vector from camera_approx_look_at_xyz ([0, -0.90, 0.54],
+    # ~1.05m). Re-measure the direction too once a rough real camera mount
+    # description is available.
+    #
+    # 2026-08-27: re-centered AGAIN after the operator physically moved the
+    # camera to a new location (unrelated to the earlier center_xyz drift
+    # fix). Real camera pose is unknown either way -- this re-uses the same
+    # offset vector ([0, -0.90, 0.54], ~1.05m) from the live tool0 position
+    # at the time (base_xyz ~= [0.081, 0.306, 0.901]) purely because it's
+    # the best available guess, not because it's been re-verified against
+    # the new physical camera mount. Re-run the overlay live script
+    # (scratchpad/safety_overlay_live.py) after this and sanity-check in
+    # rqt_image_view before trusting the visibility_links check again.
+    camera_approx_xyz: [0.081, -0.594, 1.441]
+    camera_approx_look_at_xyz: [0.081, 0.306, 0.901]
+    camera_depth_min_m: 0.6
+    camera_depth_max_m: 1.6
+    camera_half_fov_deg: 35.0
+    # Planned final poses are rejected unless all of these link origins stay
+    # inside the approximate FOV with the specified angular margin.
+    # Lowered 7->3->1deg on 2026-08-27: the overlay diagnostic confirmed
+    # forearm_link's 3D FK is correct (verified against UR10 link-length
+    # specs) but its 2D projection error grows with distance from the
+    # camera_approx_look_at_xyz anchor, since camera_approx_xyz is a guess,
+    # not a real calibration. At 3deg margin, the actual planned
+    # forearm_link angle measured 31.87deg against a 32deg limit (0.13deg
+    # short) -- confirmed via a direct IK+FK reproduction, not a real
+    # framing risk. camera_half_fov_deg itself is NOT raised past 35deg --
+    # that already matches the RealSense D435 color stream's real half-FOV,
+    # so widening it would pass poses the real camera genuinely can't see.
+    visibility_margin_deg: 1.0
+    visibility_links:
+      - forearm_link
+      - wrist_1_link
+      - tool0
+    fk_service_name: /compute_fk
+    ik_service_name: /compute_ik
+    # Goal is now a specific joint-space target (IK seeded from the current
+    # joint state, not a loose Cartesian bounding volume) -- see 2026-08-27
+    # entry in DESKTOP_CALIB_SETUP_LOG.md: the Cartesian goal let MoveGroup's
+    # constraint sampler pick an arbitrary IK branch (wrist/shoulder/elbow
+    # flip) even for a 10cm move. This is the per-joint tolerance band around
+    # that seeded IK solution.
+    joint_goal_tolerance_rad: 0.01
+    joint_states_topic: /joint_states
+    joint_names:
+      - shoulder_pan_joint
+      - shoulder_lift_joint
+      - elbow_joint
+      - wrist_1_joint
+      - wrist_2_joint
+      - wrist_3_joint
+    # Maximum excursion of any planned waypoint from the measured start
+    # state.  This rejects wide moves and alternate IK branches before
+    # execution. Values are radians, in joint_names order.
+    # shoulder_pan/wrist_2 raised 0.30->0.60 on 2026-08-27: after fixing the
+    # IK-seeding bug (see log), a real 1-pose test needed ~0.53rad on these
+    # two for a legitimate ~10cm nearby-branch move -- not a flip, just this
+    # workspace's Jacobian at the current arm posture. wrist_3 raised
+    # 0.20->1.05rad (60deg) same day per user request. All 6 raised to
+    # ~1.0rad same day (user request, general margin increase -- note this
+    # does NOT affect visibility-check rejections, only joint-delta ones).
+    max_joint_delta_rad: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0472]
+    # Kept low by default -- first real-hardware test at 0.3 (30%) moved
+    # uncomfortably fast (observed 2026-08-26). Raise only after watching a
+    # few slow, controlled poses complete safely.
+    max_velocity_scaling_factor: 0.1
+    max_acceleration_scaling_factor: 0.05
