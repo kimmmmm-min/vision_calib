@@ -1,0 +1,633 @@
+{
+  "run_dir": "/home/robottory/calib_ws/calib_data/20260903_172126",
+  "camera_info": {
+    "width": 1280,
+    "height": 720,
+    "k": [
+      908.6046142578125,
+      0.0,
+      642.4187622070312,
+      0.0,
+      908.3268432617188,
+      372.1346435546875,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "d": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "distortion_model": "plumb_bob"
+  },
+  "entries": [
+    {
+      "pose_index": 0,
+      "p_base": {
+        "x": -0.0607174139365739,
+        "y": 0.3716336393497258,
+        "z": 0.7323339231250483
+      },
+      "is_validation": false,
+      "settle_stamp_sec": 1788424460.773025,
+      "success": true,
+      "image_path": "/home/robottory/calib_ws/calib_data/20260903_172126/images/entry_0000_pose_000.png",
+      "depth_path": "/home/robottory/calib_ws/calib_data/20260903_172126/depth/entry_0000_pose_000_depth.png",
+      "capture_dt_sec": 0.07705521583557129,
+      "pixel_uv": [
+        861,
+        412
+      ],
+      "click_status": "confirmed"
+    },
+    {
+      "pose_index": 1,
+      "p_base": {
+        "x": -0.1785872180694753,
+        "y": 0.3829413661967189,
+        "z": 0.6944768675394379
+      },
+      "is_validation": false,
+      "settle_stamp_sec": 1788424465.9744668,
+      "success": true,
+      "image_path": "/home/robottory/calib_ws/calib_data/20260903_172126/images/entry_0001_pose_001.png",
+      "depth_path": "/home/robottory/calib_ws/calib_data/20260903_172126/depth/entry_0001_pose_001_depth.png",
+      "capture_dt_sec": 0.07489299774169922,
+      "pixel_uv": [
+        951,
+        409
+      ],
+      "click_status": "confirmed"
+    },
+    {
+      "pose_index": 3,
+      "p_base": {
+        "x": -0.1673798621261874,
+        "y": 0.387208821186227,
+        "z": 0.8033991503108957
+      },
+      "is_validation": false,
+      "settle_stamp_sec": 1788424469.0086174,
+      "success": true,
+      "image_path": "/home/robottory/calib_ws/calib_data/20260903_172126/images/entry_0002_pose_003.png",
+      "depth_path": "/home/robottory/calib_ws/calib_data/20260903_172126/depth/entry_0002_pose_003_depth.png",
+      "capture_dt_sec": 0.07353830337524414,
+      "pixel_uv": [
+        961,
+        324
+      ],
+      "click_status": "confirmed"
+    },
+    {
+      "pose_index": 4,
+      "p_base": {
+        "x": -0.22507674055176902,
+        "y": 0.3079288262516472,
+        "z": 0.8383502594242164
+      },
+      "is_validation": false,
+      "settle_stamp_sec": 1788424473.343071,
+      "success": true,
+      "image_path": "/home/robottory/calib_ws/calib_data/20260903_172126/images/entry_0003_pose_004.png",
+      "depth_path": "/home/robottory/calib_ws/calib_data/20260903_172126/depth/entry_0003_pose_004_depth.png",
+      "capture_dt_sec": 0.07150936126708984,
+      "pixel_uv": [
+        946,
+        245
+      ],
+      "click_status": "confirmed"
+    },
+    {
+      "pose_index": 5,
+      "p_base": {
+        "x": -0.1717120188657221,
+        "y": 0.39728025816234736,
+        "z": 0.9014152820813037
+      },
+      "is_validation": false,
+      "settle_stamp_sec": 1788424478.4887242,
+      "success": true,
+      "image_path": "/home/robottory/calib_ws/calib_data/20260903_172126/images/entry_0004_pose_005.png",
+      "depth_path": "/home/robottory/calib_ws/calib_data/20260903_172126/depth/entry_0004_pose_005_depth.png",
+      "capture_dt_sec": 0.14676332473754883,
+      "pixel_uv": [
+        989,
+        225
+      ],
+      "click_status": "confirmed"
+    },
+    {
+      "pose_index": 6,
+      "p_base": {
+        "x": -0.10140667573239293,
+        "y": 0.29791747129679724,
+        "z": 0.8698293385428958
+      },
+      "is_validation": false,
+      "settle_stamp_sec": 1788424482.622823,
+      "success": true,
+      "image_path": "/home/robottory/calib_ws/calib_data/20260903_172126/images/entry_0005_pose_006.png",
+      "depth_path": "/home/robottory/calib_ws/calib_data/20260903_172126/depth/entry_0005_pose_006_depth.png",
+      "capture_dt_sec": 0.07779288291931152,
+      "pixel_uv": [
+        849,
+        244
+      ],
+      "click_status": "confirmed"
+    },
+    {
+      "pose_index": 7,
+      "p_base": {
+        "x": -0.045866348625241915,
+        "y": 0.20541071059686902,
+        "z": 0.8372499487423912
+      },
+      "is_validation": false,
+      "settle_stamp_sec": 1788424488.6997519,
+      "success": true,
+      "image_path": "/home/robottory/calib_ws/calib_data/20260903_172126/images/entry_0006_pose_007.png",
+      "depth_path": "/home/robottory/calib_ws/calib_data/20260903_172126/depth/entry_0006_pose_007_depth.png",
+      "capture_dt_sec": 0.08365011215209961,
+      "pixel_uv": [
+        746.5,
+        256.5
+      ],
+      "click_status": "confirmed"
+    },
+    {
+      "pose_index": 0,
+      "p_base": {
+        "x": -0.02824471613687686,
+        "y": 0.24216068101327265,
+        "z": 0.7700662993741408
+      },
+      "is_validation": false,
+      "settle_stamp_sec": 1788424521.7303147,
+      "success": true,
+      "image_path": "/home/robottory/calib_ws/calib_data/20260903_172126/images/entry_0007_pose_000.png",
+      "depth_path": "/home/robottory/calib_ws/calib_data/20260903_172126/depth/entry_0007_pose_000_depth.png",
+      "capture_dt_sec": 0.09022736549377441,
+      "pixel_uv": [
+        753.5,
+        331.5
+      ],
+      "click_status": "confirmed"
+    },
+    {
+      "pose_index": 1,
+      "p_base": {
+        "x": -0.13665037705203847,
+        "y": 0.2508909028572255,
+        "z": 0.7419437396246499
+      },
+      "is_validation": false,
+      "settle_stamp_sec": 1788424524.611746,
+      "success": true,
+      "image_path": "/home/robottory/calib_ws/calib_data/20260903_172126/images/entry_0008_pose_001.png",
+      "depth_path": "/home/robottory/calib_ws/calib_data/20260903_172126/depth/entry_0008_pose_001_depth.png",
+      "capture_dt_sec": 0.06948542594909668,
+      "pixel_uv": [
+        838.5,
+        327.5
+      ],
+      "click_status": "confirmed"
+    },
+    {
+      "pose_index": 2,
+      "p_base": {
+        "x": -0.07801781903264993,
+        "y": 0.3343849644045854,
+        "z": 0.8015144068568291
+      },
+      "is_validation": false,
+      "settle_stamp_sec": 1788424529.7410681,
+      "success": true,
+      "image_path": "/home/robottory/calib_ws/calib_data/20260903_172126/images/entry_0009_pose_002.png",
+      "depth_path": "/home/robottory/calib_ws/calib_data/20260903_172126/depth/entry_0009_pose_002_depth.png",
+      "capture_dt_sec": 0.09519362449645996,
+      "pixel_uv": [
+        850.5,
+        327.5
+      ],
+      "click_status": "confirmed"
+    },
+    {
+      "pose_index": 3,
+      "p_base": {
+        "x": -0.12880360407604236,
+        "y": 0.25846865271828634,
+        "z": 0.8353316291062995
+      },
+      "is_validation": false,
+      "settle_stamp_sec": 1788424534.3886294,
+      "success": true,
+      "image_path": "/home/robottory/calib_ws/calib_data/20260903_172126/images/entry_0010_pose_003.png",
+      "depth_path": "/home/robottory/calib_ws/calib_data/20260903_172126/depth/entry_0010_pose_003_depth.png",
+      "capture_dt_sec": 0.07279324531555176,
+      "pixel_uv": [
+        842.5,
+        254.5
+      ],
+      "click_status": "confirmed"
+    },
+    {
+      "pose_index": 4,
+      "p_base": {
+        "x": -0.17328463864829244,
+        "y": 0.17857950597303018,
+        "z": 0.8730555586181676
+      },
+      "is_validation": false,
+      "settle_stamp_sec": 1788424538.0322587,
+      "success": true,
+      "image_path": "/home/robottory/calib_ws/calib_data/20260903_172126/images/entry_0011_pose_004.png",
+      "depth_path": "/home/robottory/calib_ws/calib_data/20260903_172126/depth/entry_0011_pose_004_depth.png",
+      "capture_dt_sec": 0.08047032356262207,
+      "pixel_uv": [
+        827.5,
+        187.5
+      ],
+      "click_status": "confirmed"
+    },
+    {
+      "pose_index": 5,
+      "p_base": {
+        "x": -0.11863518216577745,
+        "y": 0.26299490172632367,
+        "z": 0.9400974874176498
+      },
+      "is_validation": false,
+      "settle_stamp_sec": 1788424541.8211062,
+      "success": true,
+      "image_path": "/home/robottory/calib_ws/calib_data/20260903_172126/images/entry_0012_pose_005.png",
+      "depth_path": "/home/robottory/calib_ws/calib_data/20260903_172126/depth/entry_0012_pose_005_depth.png",
+      "capture_dt_sec": 0.0665428638458252,
+      "pixel_uv": [
+        843.5,
+        159.5
+      ],
+      "click_status": "confirmed"
+    },
+    {
+      "pose_index": 9,
+      "p_base": {
+        "x": 0.08433993532051517,
+        "y": 0.23518321877474016,
+        "z": 0.802906955277935
+      },
+      "is_validation": false,
+      "settle_stamp_sec": 1788424548.8130484,
+      "success": true,
+      "image_path": "/home/robottory/calib_ws/calib_data/20260903_172126/images/entry_0013_pose_009.png",
+      "depth_path": "/home/robottory/calib_ws/calib_data/20260903_172126/depth/entry_0013_pose_009_depth.png",
+      "capture_dt_sec": 0.08674168586730957,
+      "pixel_uv": [
+        655.5,
+        332.5
+      ],
+      "click_status": "confirmed"
+    },
+    {
+      "pose_index": 0,
+      "p_base": {
+        "x": -0.062037334817656165,
+        "y": 0.3651068930184749,
+        "z": 0.7876132070525129
+      },
+      "is_validation": false,
+      "settle_stamp_sec": 1788424672.8243284,
+      "success": true,
+      "image_path": "/home/robottory/calib_ws/calib_data/20260903_172126/images/entry_0014_pose_000.png",
+      "depth_path": "/home/robottory/calib_ws/calib_data/20260903_172126/depth/entry_0014_pose_000_depth.png",
+      "capture_dt_sec": 0.07477426528930664,
+      "pixel_uv": [
+        859.5,
+        357.5
+      ],
+      "click_status": "confirmed"
+    },
+    {
+      "pose_index": 1,
+      "p_base": {
+        "x": 0.04881266869160389,
+        "y": 0.3578161035869265,
+        "z": 0.8174243317126345
+      },
+      "is_validation": false,
+      "settle_stamp_sec": 1788424677.5358312,
+      "success": false,
+      "image_path": null,
+      "depth_path": null,
+      "capture_dt_sec": 0.21626996994018555,
+      "pixel_uv": null,
+      "click_status": "pending"
+    },
+    {
+      "pose_index": 2,
+      "p_base": {
+        "x": -0.0023088341001037543,
+        "y": 0.28469220308501325,
+        "z": 0.844057415157373
+      },
+      "is_validation": false,
+      "settle_stamp_sec": 1788424682.3523943,
+      "success": true,
+      "image_path": "/home/robottory/calib_ws/calib_data/20260903_172126/images/entry_0016_pose_002.png",
+      "depth_path": "/home/robottory/calib_ws/calib_data/20260903_172126/depth/entry_0016_pose_002_depth.png",
+      "capture_dt_sec": 0.06253695487976074,
+      "pixel_uv": [
+        757.5,
+        289.5
+      ],
+      "click_status": "confirmed"
+    },
+    {
+      "pose_index": 3,
+      "p_base": {
+        "x": -0.059128845028201184,
+        "y": 0.20188100466790412,
+        "z": 0.8817037364793131
+      },
+      "is_validation": false,
+      "settle_stamp_sec": 1788424687.2973156,
+      "success": true,
+      "image_path": "/home/robottory/calib_ws/calib_data/20260903_172126/images/entry_0017_pose_003.png",
+      "depth_path": "/home/robottory/calib_ws/calib_data/20260903_172126/depth/entry_0017_pose_003_depth.png",
+      "capture_dt_sec": 0.10389828681945801,
+      "pixel_uv": [
+        754.6680096696213,
+        210.66438356164383
+      ],
+      "click_status": "confirmed"
+    },
+    {
+      "pose_index": 4,
+      "p_base": {
+        "x": -0.10745351319263304,
+        "y": 0.2949582499511384,
+        "z": 0.9187816094202934
+      },
+      "is_validation": false,
+      "settle_stamp_sec": 1788424691.423392,
+      "success": true,
+      "image_path": "/home/robottory/calib_ws/calib_data/20260903_172126/images/entry_0018_pose_004.png",
+      "depth_path": "/home/robottory/calib_ws/calib_data/20260903_172126/depth/entry_0018_pose_004_depth.png",
+      "capture_dt_sec": 0.0603635311126709,
+      "pixel_uv": [
+        855.5,
+        192.5
+      ],
+      "click_status": "confirmed"
+    },
+    {
+      "pose_index": 5,
+      "p_base": {
+        "x": -0.21791395602015745,
+        "y": 0.30345249158693727,
+        "z": 0.8893809411067276
+      },
+      "is_validation": false,
+      "settle_stamp_sec": 1788424694.257325,
+      "success": true,
+      "image_path": "/home/robottory/calib_ws/calib_data/20260903_172126/images/entry_0019_pose_005.png",
+      "depth_path": "/home/robottory/calib_ws/calib_data/20260903_172126/depth/entry_0019_pose_005_depth.png",
+      "capture_dt_sec": 0.09229421615600586,
+      "pixel_uv": [
+        943.5,
+        197.5
+      ],
+      "click_status": "confirmed"
+    },
+    {
+      "pose_index": 6,
+      "p_base": {
+        "x": -0.16893335112309188,
+        "y": 0.3956475870364339,
+        "z": 0.9456334176789801
+      },
+      "is_validation": false,
+      "settle_stamp_sec": 1788424697.6129813,
+      "success": true,
+      "image_path": "/home/robottory/calib_ws/calib_data/20260903_172126/images/entry_0020_pose_006.png",
+      "depth_path": "/home/robottory/calib_ws/calib_data/20260903_172126/depth/entry_0020_pose_006_depth.png",
+      "capture_dt_sec": 0.11221432685852051,
+      "pixel_uv": [
+        990.5,
+        181.5
+      ],
+      "click_status": "confirmed"
+    },
+    {
+      "pose_index": 7,
+      "p_base": {
+        "x": -0.17404761555272477,
+        "y": 0.38708903097084124,
+        "z": 0.8504540010117453
+      },
+      "is_validation": false,
+      "settle_stamp_sec": 1788424700.3661263,
+      "success": true,
+      "image_path": "/home/robottory/calib_ws/calib_data/20260903_172126/images/entry_0021_pose_007.png",
+      "depth_path": "/home/robottory/calib_ws/calib_data/20260903_172126/depth/entry_0021_pose_007_depth.png",
+      "capture_dt_sec": 0.06331920623779297,
+      "pixel_uv": [
+        971.5,
+        273.5
+      ],
+      "click_status": "confirmed"
+    },
+    {
+      "pose_index": 8,
+      "p_base": {
+        "x": -0.18065934877263784,
+        "y": 0.376860415567526,
+        "z": 0.7502558072865683
+      },
+      "is_validation": false,
+      "settle_stamp_sec": 1788424703.1194158,
+      "success": true,
+      "image_path": "/home/robottory/calib_ws/calib_data/20260903_172126/images/entry_0022_pose_008.png",
+      "depth_path": "/home/robottory/calib_ws/calib_data/20260903_172126/depth/entry_0022_pose_008_depth.png",
+      "capture_dt_sec": 0.08126974105834961,
+      "pixel_uv": [
+        953.5,
+        357.5
+      ],
+      "click_status": "confirmed"
+    },
+    {
+      "pose_index": 9,
+      "p_base": {
+        "x": -0.12078847183896221,
+        "y": 0.4647695888458586,
+        "z": 0.8162447228420875
+      },
+      "is_validation": false,
+      "settle_stamp_sec": 1788424707.068589,
+      "success": true,
+      "image_path": "/home/robottory/calib_ws/calib_data/20260903_172126/images/entry_0023_pose_009.png",
+      "depth_path": "/home/robottory/calib_ws/calib_data/20260903_172126/depth/entry_0023_pose_009_depth.png",
+      "capture_dt_sec": 0.06087899208068848,
+      "pixel_uv": [
+        991.5,
+        357.5
+      ],
+      "click_status": "confirmed"
+    },
+    {
+      "pose_index": 0,
+      "p_base": {
+        "x": -0.08474563716429476,
+        "y": 0.4795459023870161,
+        "z": 0.8452303196599426
+      },
+      "is_validation": true,
+      "settle_stamp_sec": 1788424854.7020593,
+      "success": true,
+      "image_path": "/home/robottory/calib_ws/calib_data/20260903_172126/images/entry_0024_pose_000.png",
+      "depth_path": "/home/robottory/calib_ws/calib_data/20260903_172126/depth/entry_0024_pose_000_depth.png",
+      "capture_dt_sec": 0.08742165565490723,
+      "pixel_uv": [
+        976.5,
+        350.5
+      ],
+      "click_status": "confirmed"
+    },
+    {
+      "pose_index": 1,
+      "p_base": {
+        "x": -0.13567017808425913,
+        "y": 0.39456183335716827,
+        "z": 0.8674656490188584
+      },
+      "is_validation": true,
+      "settle_stamp_sec": 1788424858.3464239,
+      "success": true,
+      "image_path": "/home/robottory/calib_ws/calib_data/20260903_172126/images/entry_0025_pose_001.png",
+      "depth_path": "/home/robottory/calib_ws/calib_data/20260903_172126/depth/entry_0025_pose_001_depth.png",
+      "capture_dt_sec": 0.062468767166137695,
+      "pixel_uv": [
+        948.5,
+        272.5
+      ],
+      "click_status": "confirmed"
+    },
+    {
+      "pose_index": 2,
+      "p_base": {
+        "x": -0.010827857099269866,
+        "y": 0.3860650302876544,
+        "z": 0.9057295442402605
+      },
+      "is_validation": true,
+      "settle_stamp_sec": 1788424862.4236221,
+      "success": true,
+      "image_path": "/home/robottory/calib_ws/calib_data/20260903_172126/images/entry_0026_pose_002.png",
+      "depth_path": "/home/robottory/calib_ws/calib_data/20260903_172126/depth/entry_0026_pose_002_depth.png",
+      "capture_dt_sec": 0.07009387016296387,
+      "pixel_uv": [
+        842,
+        269
+      ],
+      "click_status": "confirmed"
+    },
+    {
+      "pose_index": 3,
+      "p_base": {
+        "x": -0.015063320759871962,
+        "y": 0.3677479933361226,
+        "z": 0.8166276643765049
+      },
+      "is_validation": true,
+      "settle_stamp_sec": 1788424865.4416716,
+      "success": true,
+      "image_path": "/home/robottory/calib_ws/calib_data/20260903_172126/images/entry_0027_pose_003.png",
+      "depth_path": "/home/robottory/calib_ws/calib_data/20260903_172126/depth/entry_0027_pose_003_depth.png",
+      "capture_dt_sec": 0.08594965934753418,
+      "pixel_uv": [
+        822.5,
+        349.5
+      ],
+      "click_status": "confirmed"
+    },
+    {
+      "pose_index": 0,
+      "p_base": {
+        "x": -0.04355189098882717,
+        "y": 0.4375915925650411,
+        "z": 0.8010261700481982
+      },
+      "is_validation": true,
+      "settle_stamp_sec": 1788424891.5295584,
+      "success": true,
+      "image_path": "/home/robottory/calib_ws/calib_data/20260903_172126/images/entry_0028_pose_000.png",
+      "depth_path": "/home/robottory/calib_ws/calib_data/20260903_172126/depth/entry_0028_pose_000_depth.png",
+      "capture_dt_sec": 0.0882728099822998,
+      "pixel_uv": [
+        898.5,
+        388.5
+      ],
+      "click_status": "confirmed"
+    },
+    {
+      "pose_index": 1,
+      "p_base": {
+        "x": -0.08130273293096625,
+        "y": 0.3541733455070782,
+        "z": 0.8284181085814655
+      },
+      "is_validation": true,
+      "settle_stamp_sec": 1788424895.502641,
+      "success": true,
+      "image_path": "/home/robottory/calib_ws/calib_data/20260903_172126/images/entry_0029_pose_001.png",
+      "depth_path": "/home/robottory/calib_ws/calib_data/20260903_172126/depth/entry_0029_pose_001_depth.png",
+      "capture_dt_sec": 0.09175586700439453,
+      "pixel_uv": [
+        869.5,
+        310.5
+      ],
+      "click_status": "confirmed"
+    },
+    {
+      "pose_index": 2,
+      "p_base": {
+        "x": 0.043710004707329386,
+        "y": 0.3398656705115084,
+        "z": 0.8723975121452983
+      },
+      "is_validation": true,
+      "settle_stamp_sec": 1788424899.9339252,
+      "success": true,
+      "image_path": "/home/robottory/calib_ws/calib_data/20260903_172126/images/entry_0030_pose_002.png",
+      "depth_path": "/home/robottory/calib_ws/calib_data/20260903_172126/depth/entry_0030_pose_002_depth.png",
+      "capture_dt_sec": 0.11975240707397461,
+      "pixel_uv": [
+        752.5,
+        298.5
+      ],
+      "click_status": "confirmed"
+    },
+    {
+      "pose_index": 3,
+      "p_base": {
+        "x": 0.03416929720079269,
+        "y": 0.32705380899644965,
+        "z": 0.7760423301298407
+      },
+      "is_validation": true,
+      "settle_stamp_sec": 1788424903.0398986,
+      "success": true,
+      "image_path": "/home/robottory/calib_ws/calib_data/20260903_172126/images/entry_0031_pose_003.png",
+      "depth_path": "/home/robottory/calib_ws/calib_data/20260903_172126/depth/entry_0031_pose_003_depth.png",
+      "capture_dt_sec": 0.09018611907958984,
+      "pixel_uv": [
+        751.5,
+        381.5
+      ],
+      "click_status": "confirmed"
+    }
+  ]
+}
