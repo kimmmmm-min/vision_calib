@@ -92,8 +92,25 @@ pose_sampler_node:
     # the new physical camera mount. Re-run the overlay live script
     # (scratchpad/safety_overlay_live.py) after this and sanity-check in
     # rqt_image_view before trusting the visibility_links check again.
-    camera_approx_xyz: [0.081, -0.594, 1.441]
-    camera_approx_look_at_xyz: [0.081, 0.306, 0.901]
+    # 2026-09-02: replaced with the REAL calibrated camera position (run
+    # 20260902_162830, T_base<-camera, 3D RMS 3.32mm) now that it exists --
+    # no longer a rough guess. look_at was originally the centroid of the 27
+    # confirmed training points (roughly where the camera was pointed, NOT
+    # its actual optical axis).
+    # 2026-09-03: look_at replaced with the camera's TRUE optical axis,
+    # derived directly from t_base_camera.yaml's rotation (camera optical
+    # +Z transformed into base frame), 1m out from camera_approx_xyz. The
+    # old centroid-based look_at was 22.7deg off from the real optical axis
+    # -- this caused forearm_link to be falsely rejected (computed 43-47deg
+    # off-axis) even though the operator visually confirmed forearm_link
+    # was fully in frame in this exact posture. Re-checked against the true
+    # axis: forearm_link was actually at 20.0deg, well inside the 34deg
+    # (35deg half-FOV - 1deg margin) limit. camera_approx_xyz also updated
+    # to match t_base_camera.yaml's translation exactly (was a slightly
+    # different rounding from a nearby run). Re-derive both again if the
+    # camera is ever physically moved.
+    camera_approx_xyz: [0.497122, 0.863484, 1.234469]
+    camera_approx_look_at_xyz: [0.061818, 0.134628, 0.706000]
     camera_depth_min_m: 0.6
     camera_depth_max_m: 1.6
     camera_half_fov_deg: 35.0

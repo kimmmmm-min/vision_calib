@@ -33,6 +33,7 @@ setup(
             # Jetson
             'image_capture_node = ee_calibration.image_capture_node:main',
             'ee_click_tool = ee_calibration.ee_click_tool:main',
+            'ee_click_manual = ee_calibration.ee_click_manual:main',
             'solve_calibration = ee_calibration.solve_calibration:main',
         ],
     },
